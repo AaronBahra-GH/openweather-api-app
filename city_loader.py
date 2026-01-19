@@ -22,11 +22,11 @@ class CityLoader(QThread):
                 # USE FOR LOOP TO IMPLEMENT FILTER FOR US CITIES TO INCLUDE STATES DUE TO CITIES HAVING THE SAME NAME
                 for city in cities_data:
                     name = city['name']
-                    State = city['state']
+                    state = city['state']
                     country = city['country']
                     
                     if country == "US":
-                        formatted_cities.append(f"{name}, {State}, {country}")
+                        formatted_cities.append(f"{name}, {state}, {country}")
                     else:
                         formatted_cities.append(f"{name}, {country}")
                 

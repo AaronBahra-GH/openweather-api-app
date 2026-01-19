@@ -99,7 +99,7 @@ class WeatherApp(QWidget):
         apply css styling from style.qss
         """
         try:
-            with open('style.qss', 'r') as file:
+            with open('resources/style.qss', 'r') as file:
                 style = file.read()
                 self.setStyleSheet(style)
         except:
