@@ -1,8 +1,9 @@
 # openweather-api-app
 
-## 1. Clone the repository from GitHub
+## 1. Clone the repository
+        https://github.com/AaronBahra-GH/openweather-api-app.git
 
-## 2. Set up venv
+## 2. Set up .venv
 #### On Windows
         python -m venv .venv
 #### On Mac/Linux:
