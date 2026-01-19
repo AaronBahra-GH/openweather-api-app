@@ -1,0 +1,43 @@
+QWidget {
+    background-color: ;
+}
+QLabel, QPushButton {
+    font-family: calibri;
+    font-size: 20px;
+}
+QLabel#city_label{
+    font-size: 30px;
+    font-weight: normal;
+    font-style: italic;
+}
+QLabel#emoji_label {
+    font-family: Segoe UI Emoji;
+}
+QLabel#error_label {
+    font-family: Segoe UI Emoji;
+    font-size: 18px;
+}
+QLineEdit#city_input {
+    font-family: arial;
+    font-size: 18px;
+}
+QPushButton {
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: grey;
+}
+QPushButton:hover {
+    background-color: green;
+}
+QPushButton#temperature_button:hover, QPushButton#temperature_button:checked:hover {
+    color:rgb(185, 185, 185);
+}
+QPushButton#temperature_button:checked {
+    color:rgb(255, 255, 255); 
+}
+QLabel#temperature_label, QLabel#emoji_label, QPushButton#temperature_button {
+    font-size: 60px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+}
