@@ -24,11 +24,11 @@ class WeatherApp(QWidget):
         self.error_label = QLabel(self)
         
         # Config and Style
-        self.setup_ui()
+        self._setup_ui()
+        self._apply_styleSheet()
         self.load_city_data()
-        self.apply_styleSheet()
         
-    def setup_ui(self):
+    def _setup_ui(self):
         """
         setup ui and component properties.
         """
@@ -94,7 +94,7 @@ class WeatherApp(QWidget):
         
         self.setFocus()
 
-    def apply_styleSheet(self):
+    def _apply_styleSheet(self):
         """
         apply css styling from style.qss
         """
@@ -102,8 +102,12 @@ class WeatherApp(QWidget):
             with open('resources/style.qss', 'r') as file:
                 style = file.read()
                 self.setStyleSheet(style)
+        except FileNotFoundError:
+            print("Warning:\n resources/style.qss not found")
+        except PermissionError:
+            print("Permission Error:\naccess denied")
         except:
-            print("Warning: style.qss not found")
+            print("Error")
     
     def load_city_data(self):
         """
@@ -162,6 +166,9 @@ class WeatherApp(QWidget):
             self.display_error(f"Request Error:\n{req_error}")
 
     def display_error(self, message):
+        """
+        clear and disable ui components to display an error from get_weather()  
+        """
         self.error_label.setText(message)
         self.city_label.clear()
         self.emoji_label.clear()
@@ -169,7 +176,6 @@ class WeatherApp(QWidget):
         self.temperature_button.setText("")
         self.temperature_button.setEnabled(False) # disable temperature converter button
         self.description_label.clear()
-        
 
     def display_weather(self, data: dict):
         city_name = data["name"]
